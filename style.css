@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.ocean {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: hsl(205, 100%, 82%); /* Ocean color */
+}
+
+.siren {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    animation: moveSiren 4s linear infinite alternate; /* Animation of movement */
+}
+
+.siren-video {
+    width: 900px;
+    height: auto;
+}
+
+.text {
+    color: rgb(255, 5, 234);
+    font-size: 50px;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif; /* Use a specific font if desired */
+    animation: glowText 1.5s ease-in-out infinite alternate; /* Animation for text glow */
+}
+
+@keyframes moveSiren {
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+    100% {
+        transform: translateX(-50%) translateY(-20px);
+    }
+}
+
+@keyframes glowText {
+    0% {
+        text-shadow: 0 0 10px #fff, 0 0 20px rgb(255, 0, 0), 0 0 30px rgb(255, 0, 0); /* Adjust the glow effect */
+        color: #e60808; /* Initial text color */
+    }
+    100% {
+        text-shadow: 0 0 20px #fff, 0 0 40px rgb(255, 7, 7), 0 0 60px rgb(255, 0, 13); /* Adjust the glow effect */
+        color: rgb(255, 0, 0); /* Final text color */
+    }
+}
